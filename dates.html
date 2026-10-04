@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deals & Events - GameVault</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0b12;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: #11111c;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #25253a;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #7c5cff;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #7c5cff;
+        }
+
+        .cart {
+            background: #7c5cff;
+            padding: 10px 16px;
+            border-radius: 8px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 75px 20px;
+            background:
+                linear-gradient(rgba(11,11,18,0.75), rgba(11,11,18,0.95)),
+                radial-gradient(circle at center, #30236b, #0b0b12 65%);
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #7c5cff;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        /* Main */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .title h2 {
+            font-size: 32px;
+        }
+
+        .title p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* Deals */
+        .deals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .deal {
+            background: #151522;
+            border: 1px solid #292942;
+            border-radius: 15px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .deal:hover {
+            transform: translateY(-6px);
+            border-color: #7c5cff;
+            box-shadow: 0 10px 30px rgba(124, 92, 255, 0.15);
+        }
+
+        .deal-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .deal h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .deal p {
+            color: #999;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .date {
+            display: inline-block;
+            background: #241b4d;
+            color: #a995ff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .deal-btn {
+            display: inline-block;
+            background: #7c5cff;
+            color: white;
+            text-decoration: none;
+            padding: 11px 18px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .deal-btn:hover {
+            background: #6245d8;
+        }
+
+        /* Countdown */
+        .countdown {
+            margin-top: 50px;
+            background: #151522;
+            border: 1px solid #292942;
+            border-radius: 15px;
+            text-align: center;
+            padding: 35px;
+        }
+
+        .countdown h2 {
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            font-size: 35px;
+            font-weight: bold;
+            color: #7c5cff;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #11111c;
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            border-top: 1px solid #25253a;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            nav a {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <div class="logo">🎮 GameVault</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#store">Store</a>
+            <a href="about.html">About</a>
+            <a href="dates.html">Deals</a>
+        </nav>
+
+        <div class="cart">
+            🛒 Cart
+        </div>
+
+    </header>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <h1>Deals & <span>Events</span></h1>
+
+        <p>
+            Don't miss our latest gaming deals and special events.
+        </p>
+
+    </section>
+
+
+    <!-- Main -->
+    <main class="container">
+
+        <div class="title">
+            <h2>🔥 Current & Upcoming Deals</h2>
+
+            <p>
+                Check out what's happening at GameVault.
+            </p>
+        </div>
+
+
+        <section class="deals">
+
+            <!-- Deal 1 -->
+            <div class="deal">
+
+                <div class="deal-icon">⚡</div>
+
+                <h3>Weekend Gaming Sale</h3>
+
+                <span class="date">
+                    October 4 - October 6
+                </span>
+
+                <p>
+                    Get up to 30% off selected gaming items
+                    during our weekend sale.
+                </p>
+
+                <a href="index.html" class="deal-btn">
+                    Shop Sale
+                </a>
+
+            </div>
+
+
+            <!-- Deal 2 -->
+            <div class="deal">
+
+                <div class="deal-icon">🎃</div>
+
+                <h3>Halloween Event</h3>
+
+                <span class="date">
+                    October 20 - October 31
+                </span>
+
+                <p>
+                    Special Halloween gaming items and
+                    limited-time offers are coming soon.
+                </p>
+
+                <a href="index.html" class="deal-btn">
+                    View Items
+                </a>
+
+            </div>
+
+
+            <!-- Deal 3 -->
+            <div class="deal">
+
+                <div class="deal-icon">💎</div>
+
+                <h3>VIP Gamer Week</h3>
+
+                <span class="date">
+                    November 10 - November 17
+                </span>
+
+                <p>
+                    Special discounts and exclusive items
+                    for our gaming community.
+                </p>
+
+                <a href="index.html" class="deal-btn">
+                    Explore
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Countdown -->
+        <section class="countdown">
+
+            <h2>⏰ Next Big Sale</h2>
+
+            <p>
+                The next GameVault sale starts soon!
+            </p>
+
+            <div class="timer" id="timer">
+                Loading...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 GameVault. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        // Countdown to October 20, 2026
+        const saleDate =
+            new Date("October 20, 2026 00:00:00").getTime();
+
+        function updateTimer() {
+
+            const now = new Date().getTime();
+
+            const difference = saleDate - now;
+
+            if (difference <= 0) {
+                document.getElementById("timer").innerHTML =
+                    "🔥 SALE IS LIVE!";
+                return;
+            }
+
+            const days =
+                Math.floor(difference / (1000 * 60 * 60 * 24));
+
+            const hours =
+                Math.floor(
+                    (difference % (1000 * 60 * 60 * 24))
+                    / (1000 * 60 * 60)
+                );
+
+            const minutes =
+                Math.floor(
+                    (difference % (1000 * 60 * 60))
+                    / (1000 * 60)
+                );
+
+            const seconds =
+                Math.floor(
+                    (difference % (1000 * 60))
+                    / 1000
+                );
+
+            document.getElementById("timer").innerHTML =
+                days + "d " +
+                hours + "h " +
+                minutes + "m " +
+                seconds + "s";
+        }
+
+        updateTimer();
+
+        setInterval(updateTimer, 1000);
+
+    </script>
+
+</body>
+</html>
