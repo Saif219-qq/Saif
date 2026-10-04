@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - GameVault</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0b12;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: #11111c;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #25253a;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #7c5cff;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #7c5cff;
+        }
+
+        .cart {
+            background: #7c5cff;
+            padding: 10px 16px;
+            border-radius: 8px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 75px 20px;
+            background:
+                linear-gradient(rgba(11,11,18,0.75), rgba(11,11,18,0.95)),
+                radial-gradient(circle at center, #30236b, #0b0b12 65%);
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #7c5cff;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        /* Main */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 25px;
+        }
+
+        /* Info */
+        .info {
+            background: #151522;
+            border: 1px solid #292942;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .info h2 {
+            color: #7c5cff;
+            margin-bottom: 20px;
+        }
+
+        .info p {
+            color: #999;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            margin-bottom: 22px;
+        }
+
+        .info-item h3 {
+            margin-bottom: 7px;
+        }
+
+        .info-item p {
+            margin: 0;
+            color: #aaa;
+        }
+
+        /* Form */
+        .contact-form {
+            background: #151522;
+            border: 1px solid #292942;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .contact-form h2 {
+            color: #7c5cff;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            background: #0f0f18;
+            border: 1px solid #303047;
+            border-radius: 8px;
+            color: white;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #7c5cff;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #7c5cff;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #6245d8;
+        }
+
+        /* Success message */
+        #message {
+            display: none;
+            background: #19351f;
+            border: 1px solid #2e7d42;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Social */
+        .social {
+            margin-top: 30px;
+        }
+
+        .social a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background: #242438;
+            padding: 10px 14px;
+            border-radius: 7px;
+            margin-right: 7px;
+            margin-bottom: 7px;
+        }
+
+        .social a:hover {
+            background: #7c5cff;
+        }
+
+        /* Footer */
+        footer {
+            background: #11111c;
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            border-top: 1px solid #25253a;
+        }
+
+        @media (max-width: 750px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            nav a {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <div class="logo">🎮 GameVault</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#store">Store</a>
+            <a href="about.html">About</a>
+            <a href="dates.html">Deals</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="cart">
+            🛒 Cart
+        </div>
+
+    </header>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <h1>Contact <span>Us</span></h1>
+
+        <p>
+            Need help? Our support team is here for you.
+        </p>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <main class="container">
+
+        <div class="contact-grid">
+
+            <!-- Contact Information -->
+            <section class="info">
+
+                <h2>📩 Get In Touch</h2>
+
+                <p>
+                    Have a question about an order, product, or your
+                    GameVault account? Send us a message and we'll help.
+                </p>
+
+
+                <div class="info-item">
+
+                    <h3>📧 Email</h3>
+
+                    <p>
+                        support@gamevault.com
+                    </p>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <h3>💬 Discord</h3>
+
+                    <p>
+                        Join our gaming community.
+                    </p>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <h3>⏰ Support Hours</h3>
+
+                    <p>
+                        Sunday - Thursday<br>
+                        10:00 AM - 8:00 PM
+                    </p>
+
+                </div>
+
+
+                <div class="social">
+
+                    <h3>Follow Us</h3>
+
+                    <br>
+
+                    <a href="#">Discord</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+
+                </div>
+
+            </section>
+
+
+            <!-- Contact Form -->
+            <section class="contact-form">
+
+                <h2>Send Us A Message</h2>
+
+                <form id="contactForm">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <select id="subject">
+
+                        <option>General Question</option>
+                        <option>Order Help</option>
+                        <option>Product Question</option>
+                        <option>Payment Problem</option>
+                        <option>Other</option>
+
+                    </select>
+
+
+                    <label for="messageText">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="messageText"
+                        placeholder="Write your message..."
+                        required
+                    ></textarea>
+
+
+                    <button type="submit">
+                        Send Message 🚀
+                    </button>
+
+                </form>
+
+
+                <div id="message">
+                    ✅ Your message has been sent successfully!
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 GameVault. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                document.getElementById("message").style.display = "block";
+
+                this.reset();
+
+            });
+
+    </script>
+
+</body>
+</html>
