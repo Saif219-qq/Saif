@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVault - Gaming Items Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0b12;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: #11111c;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #25253a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #7c5cff;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #7c5cff;
+        }
+
+        .cart {
+            background: #7c5cff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background:
+                linear-gradient(rgba(11,11,18,0.75), rgba(11,11,18,0.95)),
+                radial-gradient(circle at center, #30236b, #0b0b12 65%);
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #7c5cff;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            background: #7c5cff;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: #6245d8;
+            transform: translateY(-2px);
+        }
+
+        /* Search */
+        .search-area {
+            padding: 35px 7% 10px;
+            text-align: center;
+        }
+
+        #search {
+            width: 80%;
+            max-width: 600px;
+            padding: 15px 20px;
+            border: 1px solid #33334a;
+            border-radius: 10px;
+            background: #151522;
+            color: white;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* Categories */
+        .categories {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .category {
+            display: inline-block;
+            padding: 10px 18px;
+            margin: 5px;
+            background: #171724;
+            border: 1px solid #292942;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #bbb;
+        }
+
+        .category:hover {
+            background: #7c5cff;
+            color: white;
+        }
+
+        /* Products */
+        .products {
+            padding: 30px 7% 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .product {
+            background: #151522;
+            border: 1px solid #27273b;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            border-color: #7c5cff;
+            box-shadow: 0 10px 30px rgba(124, 92, 255, 0.15);
+        }
+
+        .product-image {
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #241b4d, #101018);
+            font-size: 65px;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .game {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #7c5cff;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            background: #7c5cff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .buy-btn:hover {
+            background: #6245d8;
+        }
+
+        /* Footer */
+        footer {
+            background: #11111c;
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            border-top: 1px solid #25253a;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            #search {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🎮 GameVault</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#store">Store</a>
+            <a href="#">Games</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="cart" onclick="showCart()">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <h1>Level Up Your <span>Game</span></h1>
+        <p>Buy digital gaming items, skins and collectibles.</p>
+        <a href="#store" class="shop-btn">Shop Now</a>
+    </section>
+
+
+    <div class="search-area">
+        <input
+            type="text"
+            id="search"
+            placeholder="🔎 Search game items..."
+            onkeyup="searchProducts()"
+        >
+    </div>
+
+
+    <div class="categories">
+        <span class="category" onclick="filterProducts('all')">All</span>
+        <span class="category" onclick="filterProducts('fortnite')">Fortnite</span>
+        <span class="category" onclick="filterProducts('roblox')">Roblox</span>
+        <span class="category" onclick="filterProducts('minecraft')">Minecraft</span>
+        <span class="category" onclick="filterProducts('valorant')">Valorant</span>
+    </div>
+
+
+    <section class="products" id="store">
+
+        <div class="product" data-game="fortnite">
+            <div class="product-image">🦸</div>
+            <div class="product-info">
+                <h3>Rare Fortnite Skin</h3>
+                <div class="game">Fortnite</div>
+                <div class="price">$14.99</div>
+                <button class="buy-btn" onclick="addToCart('Rare Fortnite Skin', 14.99)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+
+        <div class="product" data-game="roblox">
+            <div class="product-image">💎</div>
+            <div class="product-info">
+                <h3>1,000 Robux</h3>
+                <div class="game">Roblox</div>
+                <div class="price">$9.99</div>
+                <button class="buy-btn" onclick="addToCart('1,000 Robux', 9.99)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+
+        <div class="product" data-game="minecraft">
+            <div class="product-image">⛏️</div>
+            <div class="product-info">
+                <h3>Diamond Pack</h3>
+                <div class="game">Minecraft</div>
+                <div class="price">$4.99</div>
+                <button class="buy-btn" onclick="addToCart('Diamond Pack', 4.99)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+
+        <div class="product" data-game="valorant">
+            <div class="product-image">🔫</div>
+            <div class="product-info">
+                <h3>Valorant Skin</h3>
+                <div class="game">Valorant</div>
+                <div class="price">$19.99</div>
+                <button class="buy-btn" onclick="addToCart('Valorant Skin', 19.99)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+
+        <div class="product" data-game="fortnite">
+            <div class="product-image">⚡</div>
+            <div class="product-info">
+                <h3>2,800 V-Bucks</h3>
+                <div class="game">Fortnite</div>
+                <div class="price">$22.99</div>
+                <button class="buy-btn" onclick="addToCart('2,800 V-Bucks', 22.99)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+
+        <div class="product" data-game="roblox">
+            <div class="product-image">👑</div>
+            <div class="product-info">
+                <h3>Legendary Avatar</h3>
+                <div class="game">Roblox</div>
+                <div class="price">$12.99</div>
+                <button class="buy-btn" onclick="addToCart('Legendary Avatar', 12.99)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>© 2026 GameVault. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+
+        let cartCount = 0;
+
+        function addToCart(item, price) {
+            cartCount++;
+
+            document.getElementById("cartCount").textContent = cartCount;
+
+            alert(item + " added to your cart!");
+        }
+
+
+        function showCart() {
+            if (cartCount === 0) {
+                alert("Your cart is empty.");
+            } else {
+                alert("You have " + cartCount + " item(s) in your cart.");
+            }
+        }
+
+
+        function searchProducts() {
+
+            let search =
+                document.getElementById("search").value.toLowerCase();
+
+            let products =
+                document.querySelectorAll(".product");
+
+            products.forEach(product => {
+
+                let name =
+                    product.querySelector("h3").textContent.toLowerCase();
+
+                if (name.includes(search)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+
+            });
+        }
+
+
+        function filterProducts(game) {
+
+            let products =
+                document.querySelectorAll(".product");
+
+            products.forEach(product => {
+
+                if (game === "all" ||
+                    product.dataset.game === game) {
+
+                    product.style.display = "block";
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>
